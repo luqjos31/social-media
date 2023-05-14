@@ -58,7 +58,6 @@ const register = async (req, res) => {
         params.password = pwd
 
 
-
         let userToSave = new User(params)
 
         await userToSave.save()

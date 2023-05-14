@@ -35,14 +35,14 @@ app.get("/test", (req, res) => {
   console.log("The endpoint test is running");
 
   return res.status(200).json([{
-    curso: "Master en React",
-    autor: "Víctor Robles WEB",
-    url: "victorroblesweb.es/master-react"
+    curso: "",
+    autor: "",
+    url: ""
   },
   {
-    curso: "Master en React",
-    autor: "Víctor Robles WEB",
-    url: "victorroblesweb.es/master-react"
+    curso: "",
+    autor: "",
+    url: ""
   },
   ]);
 
@@ -53,8 +53,8 @@ app.get("/motor", (req, res) => {
 
   return res.render("motor", {
     id: 1,
-    nombre: "Victor",
-    web: "victorroblesweb.es"
+    nombre: "",
+    web: ""
   })
 
 });

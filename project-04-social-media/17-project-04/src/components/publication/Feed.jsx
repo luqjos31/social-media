@@ -1,4 +1,6 @@
 import React from "react"
+import avatar from "../../assets/img/user.png"
+
 export function Feed(props) {
   return (
     <>
@@ -15,7 +17,7 @@ export function Feed(props) {
 
             <div className="post__image-user">
               <a href="#" className="post__image-link">
-                <img src="assets/img/user.png" className="post__user-image" alt="Foto de perfil" />
+                <img src={avatar} className="post__user-image" alt="Foto de perfil" />
               </a>
             </div>
 
@@ -50,7 +52,7 @@ export function Feed(props) {
 
             <div className="post__image-user">
               <a href="#" className="post__image-link">
-                <img src="assets/img/user.png" className="post__user-image" alt="Foto de perfil" />
+                <img src={avatar} className="post__user-image" alt="Foto de perfil" />
               </a>
             </div>
 
@@ -84,7 +86,7 @@ export function Feed(props) {
 
             <div className="post__image-user">
               <a href="#" className="post__image-link">
-                <img src="assets/img/user.png" className="post__user-image" alt="Foto de perfil" />
+                <img src={avatar} className="post__user-image" alt="Foto de perfil" />
               </a>
             </div>
 
@@ -120,7 +122,7 @@ export function Feed(props) {
 
             <div className="post__image-user">
               <a href="#" className="post__image-link">
-                <img src="assets/img/user.png" className="post__user-image" alt="Foto de perfil" />
+                <img src={avatar} className="post__user-image" alt="Foto de perfil" />
               </a>
             </div>
 
