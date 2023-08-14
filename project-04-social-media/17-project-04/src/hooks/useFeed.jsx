@@ -1,26 +1,12 @@
 import { useState } from "react";
 import { helpHttp } from "../helpers/helpHttp";
 
-export const useForm = (initialForm) => {
-  const [form, setForm] = useState(initialForm);
+export const useFeed = (initialForm) => {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
-  const [success, setSuccess] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
-
-  const handleBlur = (e) => {
-    handleChange(e);
-    // setErrors(validateForm(form));
-  };
+  const [auth, setAuth] = useState({});
+  const [counters, setCounters] = useState({});
 
   const putImage = (idArticle) => {
     // Function code goes here
@@ -52,58 +38,67 @@ export const useForm = (initialForm) => {
       });
   };
 
-  const saveDataLocalStorage = (data) => {
-    // Function code goes here
-    // console.log(data, "here")
-    localStorage.setItem("token", data.token)
-    localStorage.setItem("user", JSON.stringify(data.user))
-  };
-
-
-  const handleSubmit = (e, action) => {
-    e.preventDefault();
+  const loginAuth = (userId, token) => {
     // setErrors(validateForm(form));
-    console.log(form)
-
     if (Object.keys(errors).length === 0) {
       setLoading(true);
       helpHttp()
-        .post(`http://localhost:5501/api/user/${action}`, {
-          body: form,
+        .get(`http://localhost:5501/api/user/profile/${userId}`, {
           headers: {
             "Content-Type": "application/json",
-            Accept: "application/json",
+            Authorization: token,
           },
         })
         .then((res) => {
-          if (res.status === "success" && action == "login") {
-            saveDataLocalStorage(res)
-            setSuccess(true)
+          if (res.status === "success") {
+            // console.log(res)
           }
-        else
-        {
-          setSuccess(false)
-        }
-          setResponse(true)
+          setAuth(res.userData)
           setLoading(false);
-          setForm({});
+          setResponse(true);
           setTimeout(() => setResponse(false), 5000);
-          // putImage(res.id)
         });
     } else {
       return;
     }
   };
 
+
+  const dataCounters = (userId, token) => {
+    // setErrors(validateForm(form));
+    if (Object.keys(errors).length === 0) {
+      setLoading(true);
+      helpHttp()
+        .get(`http://localhost:5501/api/user/counters/${userId}`, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+        })
+        .then((res) => {
+          if (res.status === "success") {
+            // console.log(res)
+          }
+          setCounters(res)
+          setLoading(false);
+          setResponse(true);
+          setTimeout(() => setResponse(false), 5000);
+        });
+    } else {
+      return;
+    }
+  }
+
   return {
-    form,
     errors,
     loading,
     response,
-    success,
-    handleChange,
-    handleBlur,
-    handleSubmit,
+    loginAuth,
+    auth,
+    setAuth,
+    dataCounters,
+    counters,
+    setCounters
   };
 };
 

@@ -7,6 +7,7 @@ export default function Login(props) {
 		errors,
 		loading,
 		response,
+		success,
 		handleChange,
 		handleBlur,
 		handleSubmit,
@@ -15,7 +16,6 @@ export default function Login(props) {
 
 	return (
 		<div>
-
 			<header className="content__header content__header--public">
 				<h1 className="content__title">Login</h1>
 			</header>
@@ -23,7 +23,7 @@ export default function Login(props) {
 			<div className="content__posts">
 				<form className="form-login" action="" onSubmit={(event) => { handleSubmit(event, "login") }}>
 
-					<strong style={response ? { backgroundColor: "#00f" } : null}>{response ? "Logueado correctamente" : null}</strong>
+					<strong style={response && success ? { backgroundColor: "#00f" } : { backgroundColor: "#f00" }}>{response && !success ? "Datos incorrectos": null  }</strong>
 
 					<div className="form-group">
 						<label htmlFor="email">Email</label>

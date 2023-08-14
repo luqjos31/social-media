@@ -1,11 +1,12 @@
 import React, { useState, createContext, useEffect } from "react"
 import { useForm } from "../hooks/useForm";
+import { useFeed } from "../hooks/useFeed";
 
 const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
 
-  const { loginAuth, loading, auth, setAuth } = useForm()
+  const { loginAuth, auth, setAuth, dataCounters, counters, setCounters } = useFeed()
 
   useEffect(() => {
     // effect code here
@@ -22,11 +23,11 @@ export const AuthProvider = ({ children }) => {
     const userObj = JSON.parse(user)
     const userId = userObj.id
     loginAuth(userId, token)
-
+    dataCounters(userId, token)
   }
 
   return (
-    <AuthContext.Provider value={{ auth, setAuth }}  >
+    <AuthContext.Provider value={{ auth, setAuth, counters, setCounters }}  >
       {children}
     </AuthContext.Provider>
   )

@@ -2,7 +2,10 @@ const { MongoClient } = require('mongodb');
 const mongoose = require("mongoose")
 
 //const url = 'mongodb://localhost:27017/local';
-const uri = "mongodb://127.0.0.1:27017/social_media?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.0"
+// const uri = "mongodb://127.0.0.1:27017/social_media?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.0"
+
+const uri = "mongodb+srv://socialtest:reactsocial@cluster0.n1tdz5p.mongodb.net/"
+
 //Create a new MongoClient
 const client = new MongoClient(uri)
 

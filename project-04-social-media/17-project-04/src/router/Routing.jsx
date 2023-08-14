@@ -7,7 +7,6 @@ import PrivateLayout from "../components/layout/private/PrivateLayout"
 import { Feed } from "../components/publication/Feed"
 import { AuthProvider } from "../context/AuthProvider"
 
-
 export default function Routing(props) {
 	return (
 

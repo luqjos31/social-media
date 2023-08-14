@@ -40,7 +40,6 @@ const register = async (req, res) => {
         // ----------------------------------------------
         // NOTE: conditional users exist
         // ----------------------------------------------
-
         console.log(value)
         if (value.length >= 1) {
 
@@ -108,7 +107,7 @@ const login = async (req, res) => {
 
   if (!params.email || !params.password) {
 
-    return res.status(500).json(
+    return res.status(501).json(
 
       {
         status: "error user request without",

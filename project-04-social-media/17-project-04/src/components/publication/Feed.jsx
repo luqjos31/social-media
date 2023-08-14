@@ -24,7 +24,7 @@ export function Feed(props) {
             <div className="post__body">
 
               <div className="post__user-info">
-                <a href="#" className="user-info__name">Victor Robles</a>
+                <a href="#" className="user-info__name">Jose</a>
                 <span className="user-info__divider"> | </span>
                 <a href="#" className="user-info__create-date">Hace 1 hora</a>
               </div>
@@ -59,7 +59,7 @@ export function Feed(props) {
             <div className="post__body">
 
               <div className="post__user-info">
-                <a href="#" className="user-info__name">Victor Robles</a>
+                <a href="#" className="user-info__name">Jose</a>
                 <span className="user-info__divider"> | </span>
                 <a href="#" className="user-info__create-date">Hace 1 hora</a>
               </div>
@@ -93,7 +93,7 @@ export function Feed(props) {
             <div className="post__body">
 
               <div className="post__user-info">
-                <a href="#" className="user-info__name">Victor Robles</a>
+                <a href="#" className="user-info__name">Jose</a>
                 <span className="user-info__divider"> | </span>
                 <a href="#" className="user-info__create-date">Hace 1 hora</a>
               </div>
@@ -129,7 +129,7 @@ export function Feed(props) {
             <div className="post__body">
 
               <div className="post__user-info">
-                <a href="#" className="user-info__name">Victor Robles</a>
+                <a href="#" className="user-info__name">Jose</a>
                 <span className="user-info__divider"> | </span>
                 <a href="#" className="user-info__create-date">Hace 1 hora</a>
               </div>
